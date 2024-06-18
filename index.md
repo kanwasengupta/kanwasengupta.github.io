@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About Me
+categories: media
 ---
 
 ![me during fieldwork in Canada] (assets/profile.jfif)
