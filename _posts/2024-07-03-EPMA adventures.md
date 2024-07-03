@@ -10,4 +10,4 @@ EPMA or Electron Micro Probe Analyzer is used to obtain micro scale quanititativ
 
 I was there for four days where two days I was trained by NRF staff and tried hands on to analyze my samples for the next two days. Even though it took some time and effort to run the samples, it was a fulfilling experience and I will definitely be back with more of my samples.
 
-! [false color BSE map of a garnet bearing sample](/assets/BSE.bmp)
+![false color BSE map of a garnet bearing sample] (/assets/BSE.bmp)
