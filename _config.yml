@@ -19,7 +19,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {title: "CV", url: "https://fsu-my.sharepoint.com/:b:/g/personal/ks22ba_fsu_edu/Ecu1pU4gx0FKtW9yYyYDSJMB7fv2qZ3gMyG_clbxQWeiww?e=1rljX0"}
   - {title: "Stewart Lab @ FSU", url: "https://myweb.fsu.edu/emstewart/"}
   - {file: "blog.md", title: "Blog"}
-  - {file: "/assets/usa_map.html", title: "My Travels"}
+  - {url: "/assets/usa_map.html", title: "My Travels"}
   
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
