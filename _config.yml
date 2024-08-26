@@ -26,7 +26,7 @@ external:                  # shows a footer with social links - for available ic
   - {title: Mail, icon: envelope, url: "mailto:ksengupta@fsu.edu"}
   - {title: Github, icon: github, url: "https://github.com/kanwasengupta"}
   - {title: Twitter, icon: twitter, url: "https://twitter.com/kuttusrailfan"}
-  - {title: Scholar, icon: google-scholar, url: "https://scholar.google.com/citations?user=yAXC1ywAAAAJ&hl=en"}
+  - {title: Scholar, icon: google, url: "https://scholar.google.com/citations?user=yAXC1ywAAAAJ&hl=en"}
 
 comments:
 #  disqus_shortname: ""    # see https://disqus.com/
