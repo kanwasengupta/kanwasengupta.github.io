@@ -16,7 +16,7 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - - {url: '/kscv.pdf', title: "CV"}
+  - {url: '/kscv.pdf', title: "CV"}
   - {title: "Stewart Lab @ FSU", url: "https://myweb.fsu.edu/emstewart/"}
   - {file: "blog.md", title: "Blog"}
   - {title: "My Travels",url: "/usa_map.html"}
