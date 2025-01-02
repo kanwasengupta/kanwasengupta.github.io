@@ -20,7 +20,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {title: "Stewart Lab @ FSU", url: "https://myweb.fsu.edu/emstewart/"}
   - {file: "blog.md", title: "Blog"}
   - {title: "My Travels",url: "/usa_map.html"}
-  - {file: "kscv.pdf',title: "CV"}
+  - {file: 'kscv.pdf', title: "CV"}
   
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
