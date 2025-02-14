@@ -13,16 +13,19 @@ show_frame: true           # adds a gray frame to the site
 show_sidebar: false        # show a sidebar instead of the usual header
 minimal: false             # use a dark header
 
-# Menu
+# Collections
+collections:
+  updates:
+    output: true
+    permalink: /updates/:path/
 
+# Menu
 navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {url: '/kscv.pdf', title: "CV"}
   - {title: "Stewart Lab @ FSU", url: "https://myweb.fsu.edu/emstewart/"}
   - {file: "blog.md", title: "Blog"}
-  - {title: "My Travels",url: "/usa_map.html"}
-  - {file: "fields.md", title: "Field Trips"}
-  
-  
+  - {title: "My Travels", url: "/usa_map.html"}
+  - {file: "updates.md", title: "Updates"}  # Added link to updates page
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:ksengupta@fsu.edu"}
@@ -39,3 +42,4 @@ comments:
 
 plugins:
  - jekyll-feed
+
