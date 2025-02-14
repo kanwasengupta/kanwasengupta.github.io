@@ -25,7 +25,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {title: "Stewart Lab @ FSU", url: "https://myweb.fsu.edu/emstewart/"}
   - {file: "blog.md", title: "Blog"}
   - {title: "My Travels", url: "/usa_map.html"}
-  - {file: "updates.md", title: "Updates"}  # Added link to updates page
+  - {file: "updates.md", title: "Field Trips"}  # Added link to updates page
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:ksengupta@fsu.edu"}
