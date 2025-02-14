@@ -20,6 +20,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {title: "Stewart Lab @ FSU", url: "https://myweb.fsu.edu/emstewart/"}
   - {file: "blog.md", title: "Blog"}
   - {title: "My Travels",url: "/usa_map.html"}
+  - {file: "fields.md", title: "Field Trips"}
   
   
 
