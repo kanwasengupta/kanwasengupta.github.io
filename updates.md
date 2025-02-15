@@ -5,10 +5,15 @@ permalink: /updates/
 ---
 
 <h1>Updates</h1>
-<ul>
-  {% for update in site.updates %}
-    <li>
-      <a href="{{ update.url }}">{{ update.title }}</a> - {{ update.date | date: "%B %d, %Y" }}
-    </li>
-  {% endfor %}
-</ul>
+
+{% for update in site.updates reversed %}
+  <article>
+    <h2><a href="{{ update.url }}">{{ update.title }}</a></h2>
+    <p><small>{{ update.date | date: "%B %d, %Y" }}</small></p>
+    <p>
+      {{ update.excerpt }}
+      <a href="{{ update.url }}">Read more...</a>
+    </p>
+    <hr>
+  </article>
+{% endfor %}
