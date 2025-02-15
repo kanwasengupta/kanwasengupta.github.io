@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Updates
+title: Field Trips
 permalink: /updates/
 ---
 
