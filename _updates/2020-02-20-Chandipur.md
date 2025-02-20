@@ -14,6 +14,6 @@ Biology-sediment interactions involved studying dominant bivalve and gastropod s
 Each group of students were givent two special topics in each discipline. Ours involved 1. Studying mudballs in the bar area and understanding paleo high energy beach conditions and 2. Studying prey predator interactions in the different facies. This involved collecting 1200+ bored and unbored shells from different environements and correlating them to size, location and species.
 
 
-
+{% include carousel.html %}
 
 
