@@ -4,7 +4,7 @@ title: Field Trips
 permalink: /updates/
 ---
 
-<h1>Updates</h1>
+<h1>Field Trips</h1>
 
 {% for update in site.updates reversed %}
   <article>
