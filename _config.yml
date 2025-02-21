@@ -46,3 +46,4 @@ comments:
 
 plugins:
  - jekyll-feed
+ - jekyll-redirect-from
