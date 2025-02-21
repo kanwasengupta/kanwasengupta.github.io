@@ -13,7 +13,7 @@ permalink: /publications/
 <ul>
   {% for pub in pub_entries %}
     <li>
-      <strong><a href="{{ pub.url }}">{{ pub.title }}</a></strong><br>
+      <strong><a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer">Read More</a></strong><br>
       <small>{{ pub.authors }} - {{ pub.journal }} ({{ pub.date | date: "%Y" }})</small><br>
       <a href="{{ pub.link }}" target="_blank">Read More</a>
     </li>
