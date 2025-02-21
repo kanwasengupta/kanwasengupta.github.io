@@ -8,18 +8,17 @@ date_format: "%B %d, %Y"
 
 # Layout
 show social: true        # show site descriptions in the footer
-show_excerpts: true        # show article excerpts on the home page
-show_frame: true           # adds a gray frame to the site
-show_sidebar: false        # show a sidebar instead of the usual header
-minimal: false             # use a dark header
+show_excerpts: true      # show article excerpts on the home page
+show_frame: true         # adds a gray frame to the site
+show_sidebar: false      # show a sidebar instead of the usual header
+minimal: false           # use a dark header
 
 # Collections
 collections:
   updates:
     output: true
     permalink: /updates/:path/
-
-publications:
+  publications:            # New collection for publications
     output: true
     permalink: /publications/:path/
 
@@ -29,8 +28,8 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {title: "Stewart Lab @ FSU", url: "https://myweb.fsu.edu/emstewart/"}
   - {file: "blog.md", title: "Blog"}
   - {title: "My Travels", url: "/usa_map.html"}
-  - {file: "updates.md", title: "Field Trips"}  # Added link to updates page
-  - {file: "publications.md", title: "Publications and Conference Presentation"}
+  - {file: "updates.md", title: "Field Trips"}  # Corrected the title
+  - {file: "publications.md", title: "Publications and Conference Presentations"}  # Corrected title
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:ksengupta@fsu.edu"}
@@ -47,4 +46,3 @@ comments:
 
 plugins:
  - jekyll-feed
-
