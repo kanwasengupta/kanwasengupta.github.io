@@ -1,26 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Travels</title>
+    <title>🌍 My Travels</title>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
+    
     <style>
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            background-color: #1e1e1e;
+            color: white;
         }
-        
+
         #header {
             text-align: center;
-            padding: 20px;
-            font-size: 24px;
+            padding: 15px;
+            font-size: 28px;
             font-weight: bold;
-            color: white;
-            background: linear-gradient(90deg, #4CAF50, #2196F3);
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            background: linear-gradient(45deg, #ff8a00, #e52e71);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         #map {
@@ -32,11 +43,11 @@
         }
 
         .custom-popup {
-            width: 180px;
+            width: 200px;
             font-size: 14px;
             text-align: center;
-            border-radius: 10px;
             padding: 10px;
+            border-radius: 10px;
         }
 
         .custom-popup img {
@@ -49,29 +60,30 @@
 </head>
 <body>
 
-    <div id="header">🌍 My Travels 🌍</div>
+    <div id="header">🌍 My Travels 🚀</div>
     <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    
     <script>
-        // Initialize the map
-        var map = L.map('map').setView([37.8, -96], 4); 
+        var map = L.map('map').setView([37.8, -96], 4);
 
-        // Add a tile layer with a modern style
-        L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        // Lightweight tile layer for fast loading
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+            subdomains: 'abcd'
         }).addTo(map);
 
-        // Custom marker icon
         var customIcon = L.icon({
-            iconUrl: 'https://cdn-icons-png.flaticon.com/64/684/684908.png', // You can replace this with your own icon
+            iconUrl: 'https://cdn-icons-png.flaticon.com/64/684/684908.png',
             iconSize: [32, 32],
             iconAnchor: [16, 32],
             popupAnchor: [0, -32]
         });
 
         var locations = [
-            { lat: 40.7128, lng: -74.0060, text: "New York City, December 2022", image: "https://example.com/image1.jpg" },
+           { lat: 40.7128, lng: -74.0060, text: "New York City, December 2022", image: "https://example.com/image1.jpg" },
             { lat: 34.0522, lng: -118.2437, text: "Los Angeles, February 2024", image: "/assets/la.jpg" },
             { lat: 48.7524, lng: -113.7285, text: "Grinell Glacier, Glacier National Park, February 2024", image: "/assets/la.jpg" },
             { lat: 40.4959, lng: -74.4243, text: "Highland Park, NJ, Dec 2022, July 2023, July 2024", image: "/assets/la.jpg" },
@@ -95,17 +107,32 @@
             { lat: 38.4755, lng: -78.4535, text: "Shenandoah National Park, June 2023 and March 2025", image: "/assets/map/phoenix.jpg" },
             { lat: 35.3522, lng: -75.5108, text: "Outer Banks, NC, March 2025", image: "/assets/map/phoenix.jpg" },
             { lat: 33.7501, lng: -84.3885, text: "Atlanta, July 2023 and September 2024", image: "/assets/map/phoenix.jpg" },
-            { lat: 40.3135, lng: -73.9802, text: "Long Branch NJ, December 2024", image: "/assets/map/phoenix.jpg" },
+            { lat: 40.3135, lng: -73.9802, text: "Long Branch NJ, December 2024", image: "/assets/map/phoenix.jpg" }
         ];
 
-        // Add markers with custom styling
+        var markers = L.markerClusterGroup();
+
         locations.forEach(function(location) {
             var popupContent = `<div class="custom-popup">
                 <strong>${location.text}</strong><br>
-                ${location.image ? `<img src="${location.image}" alt="Travel Photo">` : ""}
+                <img data-src="${location.image}" class="lazy-load" alt="Travel Photo">
             </div>`;
-            L.marker([location.lat, location.lng], { icon: customIcon }).addTo(map).bindPopup(popupContent);
+
+            var marker = L.marker([location.lat, location.lng], { icon: customIcon })
+                .bindPopup(popupContent);
+            
+            marker.on("popupopen", function () {
+                var img = marker.getPopup().getElement().querySelector("img.lazy-load");
+                if (img && img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute("data-src");
+                }
+            });
+
+            markers.addLayer(marker);
         });
+
+        map.addLayer(markers);
     </script>
 
 </body>
