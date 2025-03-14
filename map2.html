@@ -71,27 +71,27 @@
         });
 
         var locations = [
-            { lat: 40.7128, lng: -74.0060, text: "New York City, Dec 2022", image: "/assets/map/nyc.jpg" },
-            { lat: 34.0522, lng: -118.2437, text: "Los Angeles, Feb 2024", image: "/assets/map/la.jpg" },
-            { lat: 48.7524, lng: -113.7285, text: "Grinell Glacier, Feb 2024", image: "/assets/map/glacier.jpg" },
-            { lat: 40.4959, lng: -74.4243, text: "Highland Park, NJ (Dec 2022, Jul 2023, Jul 2024)", image: "/assets/map/hp.jpg" },
-            { lat: 39.2904, lng: -76.6122, text: "Baltimore, Aug 2024", image: "/assets/map/baltimore.jpg" },
-            { lat: 36.056595, lng: -112.125092, text: "Grand Canyon, Jul 2024", image: "/assets/map/gc.jpg" },
-            { lat: 38.9072, lng: -77.0369, text: "Washington DC (Jul 2024, Dec 2024)", image: "/assets/map/dc.jpg" },
-            { lat: 37.7749, lng: -122.4194, text: "San Francisco, Dec 2023 (AGU 23)", image: "/assets/map/sf.jpg" },
-            { lat: 35.1495, lng: -90.0490, text: "Memphis, Apr 2024", image: "/assets/map/memphis.jpg" },
-            { lat: 34.7445, lng: -92.2880, text: "Little Rock (Solar Eclipse, Apr 2024)", image: "/assets/map/lr.jpg" },
-            { lat: 47.8021, lng: -123.6044, text: "Olympic National Park, Jul 2024", image: "/assets/map/olympic.jpg" },
-            { lat: 47.6061, lng: -122.3328, text: "Seattle, Jul 2024", image: "/assets/map/seattle.jpg" },
-            { lat: 35.7143, lng: -83.5104, text: "Great Smoky Mountains, Labor Day 2024", image: "/assets/map/smoky.jpg" },
-            { lat: 33.4484, lng: -112.0740, text: "Phoenix, Jul 2024", image: "/assets/map/phoenix.jpg" },
-            { lat: 30.1766, lng: -85.8055, text: "Panama City Beach (Nov 2022, Jun 2024)", image: "/assets/map/pcb.jpg" },
-            { lat: 30.3935, lng: -86.4958, text: "Destin, Nov 2023", image: "/assets/map/destin.jpg" },
-            { lat: 32.2981, lng: -90.1806, text: "Jackson, Apr 2024", image: "/assets/map/jackson.jpg" },
-            { lat: 38.4755, lng: -78.4535, text: "Shenandoah NP (Jun 2023, Mar 2025)", image: "/assets/map/shenandoah.jpg" },
-            { lat: 35.3522, lng: -75.5108, text: "Outer Banks, NC (Mar 2025)", image: "/assets/map/obx.jpg" },
-            { lat: 33.7501, lng: -84.3885, text: "Atlanta (Jul 2023, Sep 2024)", image: "/assets/map/atlanta.jpg" },
-            { lat: 40.3135, lng: -73.9802, text: "Long Branch NJ, Dec 2024", image: "/assets/map/longbranch.jpg" }
+            { lat: 40.7128, lng: -74.0060, text: "New York City, December 2022", image: "https://example.com/image1.jpg" },
+            { lat: 34.0522, lng: -118.2437, text: "Los Angeles, February 2024", image: "/assets/la.jpg" },
+            { lat: 48.7524, lng: -113.7285, text: "Grinell Glacier, Glacier National Park, February 2024", image: "/assets/la.jpg" },
+            { lat: 40.4959, lng: -74.4243, text: "Highland Park, NJ, Dec 2022, July 2023, July 2024", image: "/assets/la.jpg" },
+            { lat: 39.2904, lng: -76.6122, text: "Baltimore, August 2024", image: "/assets/map/baltimore.jpg" },
+            { lat: 36.056595, lng: -112.125092, text: "Grand Canyon, July 2024", image: "/assets/la.jpg" },
+            { lat: 38.9072, lng: -77.0369, text: "Washington DC, July 2024, December 2024", image: "/assets/map/dc.jpg" },
+            { lat: 37.7749, lng: -122.4194, text: "San Francisco, December 2023 for AGU 23", image: "/assets/la.jpg" },
+            { lat: 35.1495, lng: -90.0490, text: "Memphis, April 2024", image: "/assets/la.jpg" },
+            { lat: 34.7445, lng: -92.2880, text: "Little Rock, April 2024 for the complete solar eclipse", image: "/assets/la.jpg" },
+            { lat: 47.8021, lng: -123.6044, text: "Olympic National Park, July 2024", image: "/assets/map/olympic.jpg" },
+            { lat: 47.6061, lng: -122.3328, text: "Seattle, July 2024", image: "/assets/map/seattle.jpg" },
+            { lat: 35.714321, lng: -83.510391, text: "Gatlinburg and the Great Smoky Mountains, Labor day weekend 2024", image: "/assets/la.jpg" },
+            { lat: 35.714321, lng: -83.510391, text: "Gatlinburg, Tennessee, June 2023, August 2024", image: "/assets/la.jpg" },
+            { lat: 33.448376, lng: -112.074036, text: "Phoenix, July 2024", image: "/assets/map/phoenix.jpg" },
+            { lat: 30.1766, lng: -85.8055, text: "Panama City Beach, November 2022, June 2024", image: "/assets/map/phoenix.jpg" },
+            { lat: 30.3935, lng: -86.4958, text: "Destin, November 2023", image: "/assets/map/phoenix.jpg" },
+            { lat: 30.4213, lng: -87.2169, text: "Pensacola, April 2024", image: "/assets/map/phoenix.jpg" },
+            { lat: 32.2981, lng: -90.1806, text: "Jackson, April 2024", image: "/assets/map/phoenix.jpg" },
+            { lat: 44.5516, lng: -73.1637, text: "Colchester, November 2023", image: "/assets/map/phoenix.jpg" },
+            { lat: 3.1319, lng: 101.6841, text: "Kuala Lumpur, October 2017", image: "/assets/map/phoenix.jpg" }
         ];
 
         // Add markers with custom styling
@@ -103,5 +103,6 @@
             L.marker([location.lat, location.lng], { icon: customIcon }).addTo(map).bindPopup(popupContent);
         });
     </script>
+
 </body>
 </html>
