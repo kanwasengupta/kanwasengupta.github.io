@@ -27,7 +27,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {url: '/kscv.pdf', title: "CV"}
   - {title: "Stewart Lab @ FSU", url: "https://myweb.fsu.edu/emstewart/"}
   - {file: "blog.md", title: "Blog"}
-  - {title: "My Travels", url: "/usa_map.html"}
+  - {title: "My Travels", url: "/map2.html"}
   - {file: "updates.md", title: "Field Trips"}  # Corrected the title
   - {file: "publications.md", title: "Publications and Conference Presentations"}  # Corrected title
 
