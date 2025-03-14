@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌍 My Travels</title>
+    <title>My Travels</title>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
-    
     <style>
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #1e1e1e;
-            color: white;
+            background-color: #f4f4f4;
         }
-
+        
         #header {
             text-align: center;
-            padding: 15px;
-            font-size: 28px;
+            padding: 20px;
+            font-size: 24px;
             font-weight: bold;
-            color: #fff;
-            background: linear-gradient(45deg, #ff8a00, #e52e71);
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            color: white;
+            background: linear-gradient(90deg, #4CAF50, #2196F3);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         #map {
@@ -36,11 +32,11 @@
         }
 
         .custom-popup {
-            width: 200px;
+            width: 180px;
             font-size: 14px;
             text-align: center;
-            padding: 10px;
             border-radius: 10px;
+            padding: 10px;
         }
 
         .custom-popup img {
@@ -53,22 +49,22 @@
 </head>
 <body>
 
-    <div id="header">🌍 My Travels 🚀</div>
+    <div id="header">🌍 My Travels 🌍</div>
     <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
-    
     <script>
-        var map = L.map('map').setView([37.8, -96], 4);
+        // Initialize the map
+        var map = L.map('map').setView([37.8, -96], 4); 
 
-        // Reliable tile layer
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+        // Add a tile layer with a modern style
+        L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
+        // Custom marker icon
         var customIcon = L.icon({
-            iconUrl: 'https://cdn-icons-png.flaticon.com/64/684/684908.png',
+            iconUrl: 'https://cdn-icons-png.flaticon.com/64/684/684908.png', // You can replace this with your own icon
             iconSize: [32, 32],
             iconAnchor: [16, 32],
             popupAnchor: [0, -32]
@@ -98,21 +94,14 @@
             { lat: 40.3135, lng: -73.9802, text: "Long Branch NJ, Dec 2024", image: "/assets/map/longbranch.jpg" }
         ];
 
-        var markers = L.markerClusterGroup();
-
+        // Add markers with custom styling
         locations.forEach(function(location) {
             var popupContent = `<div class="custom-popup">
                 <strong>${location.text}</strong><br>
-                <img src="${location.image}" class="lazy-load" alt="Travel Photo">
+                ${location.image ? `<img src="${location.image}" alt="Travel Photo">` : ""}
             </div>`;
-
-            var marker = L.marker([location.lat, location.lng], { icon: customIcon })
-                .bindPopup(popupContent);
-            
-            markers.addLayer(marker);
+            L.marker([location.lat, location.lng], { icon: customIcon }).addTo(map).bindPopup(popupContent);
         });
-
-        map.addLayer(markers);
     </script>
 
 </body>
