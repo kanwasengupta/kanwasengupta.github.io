@@ -2,6 +2,8 @@
 title:  "Sedimentological and Paleobiological field at Chandipur shore, February 2020"
 mathjax: true
 layout: post
+latitude: 21.4399
+longitude: 87.0149
 carousel_images: "carousel2"
 ---
 
