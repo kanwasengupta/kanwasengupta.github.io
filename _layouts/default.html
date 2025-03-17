@@ -87,16 +87,26 @@
       <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
       <script>
         // Initialize the map
-        var map = L.map('map').setView([51.505, -0.09], 13);  // Default location; modify as needed
+        var map = L.map('map').setView([0, 0], 2);  // Set view to the center of the world with zoom level 2
 
         // Tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // Add markers dynamically for posts in the _updates folder
+        // Define a custom marker icon
+        var icon = L.icon({
+          iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+          iconSize: [25, 41], // Make the icon smaller
+          iconAnchor: [12, 41], // Set anchor point at the bottom of the marker
+          popupAnchor: [1, -34], // Position the popup correctly
+          shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+          shadowSize: [41, 41]
+        });
+
+        // Add markers dynamically for posts in the _updates folder with custom icons
         {% for post in site.updates %}
-          var marker = L.marker([{{ post.latitude }}, {{ post.longitude }}]).addTo(map);
+          var marker = L.marker([{{ post.latitude }}, {{ post.longitude }}], { icon: icon }).addTo(map);
           marker.bindPopup("<a href='{{ post.url }}'>{{ post.title }}</a>");
         {% endfor %}
       </script>
