@@ -1,49 +1,53 @@
+# Site Information
 title: "Kanwa Sengupta"
-author: "Kanwa 'kuttus' Sengupta"
+author: "Kanwa 'Kuttus' Sengupta"
 description: "<b style=\"color: #f45;\">&lt;kuttus/FSU </b>"
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
 date_format: "%B %d, %Y"
 
-# Layout
-show social: true        # show site descriptions in the footer
-show_excerpts: true      # show article excerpts on the home page
-show_frame: true         # adds a gray frame to the site
-show_sidebar: false      # show a sidebar instead of the usual header
-minimal: false           # use a dark header
+# Layout Customization
+show_social: true         # Display social links in the footer
+show_excerpts: true       # Show article previews on the homepage
+show_frame: true          # Adds a subtle frame to the layout
+show_sidebar: false       # Disables sidebar for a full-width layout
+minimal: false            # Enables dark header for a sleek design
 
-# Collections
+# Content Collections
 collections:
   updates:
     output: true
     permalink: /updates/:path/
-  publications:            # New collection for publications
+  publications:
     output: true
     permalink: /publications/:path/
 
-# Menu
-navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {url: '/kscv.pdf', title: "CV"}
-  - {title: "Stewart Lab @ FSU", url: "https://myweb.fsu.edu/emstewart/"}
-  - {file: "blog.md", title: "Blog"}
-  - {title: "My Travels", url: "/map2.html"}
-  - {file: "updates.md", title: "Field Trips"}  # Corrected the title
-  - {file: "publications.md", title: "Publications and Conference Presentations"}  # Corrected title
+# Navigation Menu
+navigation:
+  - { url: "/kscv.pdf", title: "📄 CV" }
+  - { title: "🔬 Stewart Lab @ FSU", url: "https://myweb.fsu.edu/emstewart/" }
+  - { file: "blog.md", title: "📝 Blog" }
+  - { title: "🌍 My Travels", url: "/map2.html" }
+  - { file: "updates.md", title: "⛏️ Field Trips" }  
+  - { file: "publications.md", title: "📚 Publications & Conferences" }
 
-external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:ksengupta@fsu.edu"}
-  - {title: Github, icon: github, url: "https://github.com/kanwasengupta"}
-  - {title: Twitter, icon: twitter, url: "https://twitter.com/kuttusrailfan"}
-  - {title: Scholar, icon: google, url: "https://scholar.google.com/citations?user=yAXC1ywAAAAJ&hl=en"}
-  - {title: Researchgate, icon: researchgate, url: "https://www.researchgate.net/profile/Kanwa-Sengupta"}
-  - {title: Orcid, icon: orcid, url: "https://orcid.org/my-orcid?orcid=0009-0006-3304-0887"}
-  - {title: Linkedin, icon: linkedin, url: "https://www.linkedin.com/in/kanwa-sengupta-539795213/"}
+# Social & External Links (Footer)
+external:
+  - { title: "✉️ Mail", icon: envelope, url: "mailto:ksengupta@fsu.edu" }
+  - { title: "🐙 GitHub", icon: github, url: "https://github.com/kanwasengupta" }
+  - { title: "🐦 Twitter", icon: twitter, url: "https://twitter.com/kuttusrailfan" }
+  - { title: "📖 Scholar", icon: google, url: "https://scholar.google.com/citations?user=yAXC1ywAAAAJ&hl=en" }
+  - { title: "🔬 ResearchGate", icon: researchgate, url: "https://www.researchgate.net/profile/Kanwa-Sengupta" }
+  - { title: "🧬 ORCID", icon: orcid, url: "https://orcid.org/my-orcid?orcid=0009-0006-3304-0887" }
+  - { title: "🔗 LinkedIn", icon: linkedin, url: "https://www.linkedin.com/in/kanwa-sengupta-539795213/" }
 
+# Comments (Optional)
 comments:
-#  disqus_shortname: ""    # see https://disqus.com/
-#  isso_domain: ""         # see https://posativ.org/isso/
+#  disqus_shortname: ""    # Enable Disqus comments
+#  isso_domain: ""         # Enable Isso comments
 
+# Plugins
 plugins:
- - jekyll-feed
- - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-redirect-from
