@@ -1,128 +1,53 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-<head>
-  <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
-  <meta charset="{{ site.encoding }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="{{ page.author | default: site.author | escape }}">
-  <meta name="generator" content="Jekyll v{{ jekyll.version }}">
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
+# Site Information
+title: "Kanwa Sengupta"
+author: "Kanwa 'Kuttus' Sengupta"
+description: "<b style=\"color: #f45;\">&lt;kuttus/FSU </b>"
+permalink: /:title/
+lang: "en"
+excerpt_separator: "\n\n\n"
+date_format: "%B %d, %Y"
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+# Layout Customization
+show_social: true         # Display social links in the footer
+show_excerpts: true       # Show article previews on the homepage
+show_frame: true          # Adds a subtle frame to the layout
+show_sidebar: false       # Disables sidebar for a full-width layout
+minimal: false            # Enables dark header for a sleek design
 
-  <!-- Custom Styles -->
-  <style>
-    body {
-      background-color: #f5f5f5;
-      color: #333;
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    header {
-      background: #ffffff;
-      padding: 15px 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
-      transition: transform 0.3s ease-in-out;
-    }
-    .navbar-brand {
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: #333;
-    }
-    .navbar-nav .nav-link {
-      color: #333;
-      margin-right: 15px;
-      transition: color 0.3s, transform 0.2s;
-    }
-    .navbar-nav .nav-link:hover {
-      color: #007bff;
-      transform: translateY(-3px);
-    }
-    .container {
-      max-width: 1200px;
-      margin: 100px auto 20px;
-      padding: 20px;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 1s ease-out forwards;
-    }
-    footer {
-      background: #fff;
-      padding: 20px 0;
-      text-align: center;
-      color: #777;
-      border-top: 1px solid #eaeaea;
-      margin-top: 40px;
-      opacity: 0;
-      animation: fadeIn 1.5s ease-out forwards 0.5s;
-    }
-    a {
-      color: #007bff;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    a:hover {
-      color: #0056b3;
-    }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
-</head>
+# Content Collections
+collections:
+  updates:
+    output: true
+    permalink: /updates/:path/
+  publications:
+    output: true
+    permalink: /publications/:path/
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            {% for item in site.navigation %}
-              <li class="nav-item">
-                <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+# Navigation Menu
+navigation:
+  - { url: "/kscv.pdf", title: "📄 CV" }
+  - { title: "🔬 Stewart Lab @ FSU", url: "https://myweb.fsu.edu/emstewart/" }
+  - { file: "blog.md", title: "📝 Blog" }
+  - { title: "🌍 My Travels", url: "/map2.html" }
+  - { file: "updates.md", title: "⛏️ Field Trips" }  
+  - { file: "publications.md", title: "📚 Publications & Conferences" }
 
-  <div class="container">
-    {{ content }}
-  </div>
+# Social & External Links (Footer)
+external:
+  - { title: "✉️ Mail", icon: envelope, url: "mailto:ksengupta@fsu.edu" }
+  - { title: "🐙 GitHub", icon: github, url: "https://github.com/kanwasengupta" }
+  - { title: "🐦 Twitter", icon: twitter, url: "https://twitter.com/kuttusrailfan" }
+  - { title: "📖 Scholar", icon: google, url: "https://scholar.google.com/citations?user=yAXC1ywAAAAJ&hl=en" }
+  - { title: "🔬 ResearchGate", icon: researchgate, url: "https://www.researchgate.net/profile/Kanwa-Sengupta" }
+  - { title: "🧬 ORCID", icon: orcid, url: "https://orcid.org/my-orcid?orcid=0009-0006-3304-0887" }
+  - { title: "🔗 LinkedIn", icon: linkedin, url: "https://www.linkedin.com/in/kanwa-sengupta-539795213/" }
 
-  <footer>
-    <div>{{ site.description | default: site.title }}</div>
-    <div>
-      {% for item in site.external %}
-        <a href="{{ item.url }}" target="_blank" aria-label="{{ item.title }}">
-          <i class="fab fa-{{ item.icon }}"></i>
-        </a>
-      {% endfor %}
-    </div>
-  </footer>
+# Comments (Optional)
+comments:
+#  disqus_shortname: ""    # Enable Disqus comments
+#  isso_domain: ""         # Enable Isso comments
 
-  <!-- Bootstrap JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- FontAwesome Icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</body>
-</html>
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
