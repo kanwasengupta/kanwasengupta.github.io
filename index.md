@@ -13,7 +13,7 @@ categories: media
   </p>
 
   <p style="text-align: justify; font-size: 1.1em;">
-    I am a proud member of the <strong>Stewart Lab at EOAS</strong> (which we internally call <em>"The Stewart Littles" 😆</em>).
+    I am a member of the <strong>Stewart Lab at EOAS</strong> (which we internally call <em>"The Stewart Littles" 😆</em>).
   </p>
 
   <p style="text-align: center; font-style: italic;">
