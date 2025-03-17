@@ -29,7 +29,8 @@ navigation:
   - { title: "🔬 Stewart Lab @ FSU", url: "https://myweb.fsu.edu/emstewart/" }
   - { file: "blog.md", title: "📝 Blog" }
   - { title: "🌍 My Travels", url: "/map2.html" }
-  - { file: "updates.md", title: "⛏️ Field Trips" }  
+  - { file: "updates.md", title: "⛏️ Field Trips" }
+  - { file: "fieldmap.md", title: "🌍 Field Map" }  # Added fieldmap.md here
   - { file: "publications.md", title: "📚 Publications & Conferences" }
 
 # Social & External Links (Footer)
