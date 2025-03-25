@@ -19,9 +19,32 @@ collections:
   updates:
     output: true
     permalink: /updates/:path/
+    layout: default
+    title: "Updates"
+    description: "Latest posts and announcements"
   publications:
     output: true
     permalink: /publications/:path/
+    layout: default
+    title: "Publications"
+    description: "Research papers and articles"
+
+# Defaults for collections (Syncing with Dark Theme in layout)
+defaults:
+  - scope:
+      path: ""
+      type: "updates"
+    values:
+      layout: "default"
+      background_color: "#121212"
+      text_color: "#e0e0e0"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "default"
+      background_color: "#121212"
+      text_color: "#e0e0e0"
 
 # Navigation Menu
 navigation:
