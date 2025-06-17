@@ -23,9 +23,9 @@ categories: media
 
 <br>
 
-<div style="text-align: center;">
-  <img src="/assets/IMG_3718.JPG" alt="Profile Picture" style="width: 80%; max-width: 500px; height: auto; border-radius: 15px; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);">
-</div>
+<!div style="text-align: center;">
+  <!img src="/assets/IMG_3718.JPG" alt="Profile Picture" style="width: 80%; max-width: 500px; height: auto; border-radius: 15px; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);">
+</div!>
 
 <style>
   @media (max-width: 768px) {
