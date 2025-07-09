@@ -1,0 +1,61 @@
+## **Fix: .github Folder Not Uploading**
+
+The `.github` folder contains the deployment automation, and it's not uploading because **GitHub's web interface has limitations with hidden folders** (folders starting with a dot).
+
+---
+
+## ️ **Solution 1: Manual Upload of Workflow File (Easiest)**
+
+### **Step 1: Create the Folder Structure Manually**
+
+1. Go to your repository: `https://github.com/kanwasengupta/kanwasengupta.github.io`
+2. Click **"Add file"** → **"Create new file"**
+3. In the filename field, type: `.github/workflows/deploy.yml`
+
+1. This will automatically create the folders
+
+
+
+4. **Copy and paste this exact content:**
+
+
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build
+      run: npm run build
+      env:
+        NODE_ENV: production
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
+        publish_branch: main
+        keep_files: false
+```
