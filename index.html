@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Kanwa Sengupta | Geologist &amp; PhD Student</title>
+    <meta name="description" content="Personal website of Kanwa Sengupta, a geologist and PhD student specializing in structural geology and tectonics"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/lib/typed.min.js"></script>
+    <script src="https://unpkg.com/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        /* Geological Background Animations */
+        .geological-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #374151 50%, #4b5563 75%, #6b7280 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .geological-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(5, 150, 105, 0.2) 0%, transparent 50%);
+            background-size: 100% 100%;
+            animation: geologicalShift 20s ease-in-out infinite;
+        }
+        
+        @keyframes geologicalShift {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(-10px) translateY(-5px); }
+            50% { transform: translateX(10px) translateY(5px); }
+            75% { transform: translateX(-5px) translateY(10px); }
+        }
+        
+        .mountain-silhouette {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 50%, transparent 100%);
+            clip-path: polygon(
+                0% 100%, 0% 60%, 10% 50%, 20% 65%, 30% 45%, 40% 55%, 50% 35%, 
+                60% 50%, 70% 40%, 80% 60%, 90% 45%, 100% 55%, 100% 100%
+            );
+            animation: mountainFloat 15s ease-in-out infinite;
+        }
+        
+        @keyframes mountainFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+                radial-gradient(2px 2px at 40px 70px, #fff, transparent), 
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, #fff, transparent), 
+                radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: sparkle 3s linear infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Particle Animation */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        /* Smooth Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in-up.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Hover Animations */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hover-glow {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+            border-color: #d97706;
+        }
+        
+        /* Floating Animation */
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Pulse Animation */
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 5px rgba(217, 119, 6, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(217, 119, 6, 0.8); }
+        }
+        
+        /* Scroll Animations */
+        html { scroll-behavior: smooth; }
+        
+        /* Navigation Animation */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #d97706;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        /* Card Animations */
+        .card-animate {
+            transition: all 0.3s ease;
+        }
+        
+        .card-animate:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Button Animations */
+        .btn-animate {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-animate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-animate:hover::before {
+            left: 100%;
+        }
+        
+        /* Loading Animation */
+        .loading-dots {
+            display: inline-block;
+        }
+        
+        .loading-dots::after {
+            content: '';
+            animation: dots 1.5s steps(5, end) infinite;
+        }
+        
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mountain-silhouette {
+                height: 30%;
+            }
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #d97706;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b45309;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .geological-hero {
+                min-height: 100vh;
+                background-attachment: scroll; /* Better performance on mobile */
+            }
+            
+            .mountain-silhouette {
+                height: 25%;
+                animation: none; /* Disable heavy animations on mobile */
+            }
+            
+            .stars {
+                animation-duration: 5s; /* Slower animation for better performance */
+            }
+            
+            /* Mobile Typography */
+            .text-4xl { font-size: 2rem; }
+            .text-6xl { font-size: 2.5rem; }
+            .text-2xl { font-size: 1.5rem; }
+            .text-3xl { font-size: 1.75rem; }
+            
+            /* Mobile Spacing */
+            .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+            .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+            .gap-6 { gap: 1rem; }
+            .gap-8 { gap: 1.5rem; }
+            
+            /* Mobile Cards */
+            .card-animate:hover {
+                transform: none; /* Disable hover transforms on mobile */
+            }
+            
+            /* Mobile Particles */
+            #particles-js {
+                display: none; /* Hide particles on mobile for performance */
+            }
+            
+            /* Mobile Contact Form */
+            .fade-in-left, .fade-in-right {
+                transform: translateY(20px);
+            }
+            
+            /* Mobile Navigation */
+            .nav-link::after {
+                display: none; /* Remove hover underlines on mobile */
+            }
+        }
+
+        /* Touch-friendly interactions */
+        @media (hover: none) and (pointer: coarse) {
+            .hover-lift:hover {
+                transform: none;
+            }
+            
+            .hover-glow:hover {
+                box-shadow: none;
+                border-color: inherit;
+            }
+            
+            .card-animate:hover {
+                transform: none;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        /* Mobile-first button improvements */
+        .btn-mobile {
+            min-height: 44px; /* Apple's recommended touch target */
+            padding: 12px 24px;
+            font-size: 16px; /* Prevents zoom on iOS */
+        }
+
+        /* Mobile form improvements */
+        @media (max-width: 768px) {
+            input, textarea, select {
+                font-size: 16px; /* Prevents zoom on iOS */
+                min-height: 44px;
+            }
+            
+            button {
+                min-height: 44px;
+                font-size: 16px;
+            }
+        }
+
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .stars, .mountain-silhouette, .float, .pulse-glow {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    <!-- Navigation -->
+    <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="#home" class="text-xl font-bold bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm hover-glow">
+                <span class="text-amber-700">Kanwa</span> <span class="text-slate-800">Sengupta</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="nav-link text-sm font-medium text-amber-600">Home</a>
+                <a href="#about" class="nav-link text-sm font-medium text-gray-600 hover:text-amber-600">About</a>
+                <a href="#research" class="nav-link text-sm font-medium text-gray-600 hover:text-amber-600">Research</a>
+                <a href="#blog" class="nav-link text-sm font-medium text-gray-600 hover:text-amber-600">Blog</a>
+                <a href="#contact" class="nav-link text-sm font-medium text-gray-600 hover:text-amber-600">Contact</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-amber-600 p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-md shadow-lg py-4">
+            <div class="container mx-auto px-4 flex flex-col space-y-4">
+                <a href="#home" class="nav-link text-sm font-medium text-amber-600 p-2">Home</a>
+                <a href="#about" class="nav-link text-sm font-medium text-gray-600 hover:text-amber-600 p-2">About</a>
+                <a href="#research" class="nav-link text-sm font-medium text-gray-600 hover:text-amber-600 p-2">Research</a>
+                <a href="#blog" class="nav-link text-sm font-medium text-gray-600 hover:text-amber-600 p-2">Blog</a>
+                <a href="#contact" class="nav-link text-sm font-medium text-gray-600 hover:text-amber-600 p-2">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="geological-hero relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="mountain-silhouette"></div>
+        <div class="stars"></div>
+        <div id="particles-js"></div>
+        
+        <div class="container relative z-10 px-4 md:px-6">
+            <div class="max-w-3xl mx-auto text-center text-white">
+                <h1 class="fade-in-up text-4xl md:text-6xl font-bold tracking-tight mb-4">
+                    Hi, I'm <span class="text-amber-400 pulse-glow">Kanwa Sengupta</span>
+                </h1>
+                
+                <h2 class="fade-in-up text-2xl md:text-3xl font-medium mb-6 text-gray-300" style="animation-delay: 0.2s;">
+                    I'm a <span id="typed-text" class="text-amber-400"></span>
+                </h2>
+                
+                <p class="fade-in-up text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto" style="animation-delay: 0.4s;">
+                    Combined my love for exploring and science. Understanding the history of the earth using tools of geology.
+                </p>
+                
+                <div class="fade-in-up flex flex-col sm:flex-row gap-4 justify-center" style="animation-delay: 0.6s;">
+                    <a href="#research" class="btn-animate inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 btn-mobile rounded-lg font-medium transition-all duration-300 hover-lift">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        View My Research
+                    </a>
+                    
+                    <a href="https://kanwasengupta.github.io/New_CV_March_2025%20(1).pdf" target="_blank" class="btn-animate inline-flex items-center gap-2 border border-sky-500 text-sky-400 hover:bg-sky-50 hover:text-sky-600 px-6 py-3 btn-mobile rounded-lg font-medium transition-all duration-300 hover-lift">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        My CV
+                    </a>
+                    
+                    <a href="https://www.researchgate.net/profile/Kanwa-Sengupta?ev=hdr_xprf" target="_blank" class="btn-animate inline-flex items-center gap-2 border border-amber-600 text-amber-400 hover:bg-amber-50 hover:text-amber-600 px-6 py-3 btn-mobile rounded-lg font-medium transition-all duration-300 hover-lift">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                        ResearchGate
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
+            <button onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})" class="float text-amber-400 hover:text-amber-300 transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="geological-hero py-20 relative">
+        <div class="mountain-silhouette"></div>
+        <div class="stars"></div>
+        <div class="container px-4 md:px-6 relative z-10">
+            <div class="fade-in-up text-center mb-12 bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg hover-glow">
+                <h2 class="text-3xl font-bold mb-2">About Me</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    I am a PhD student at the 
+                    <a href="https://www.eoas.fsu.edu/" target="_blank" class="text-amber-600 hover:underline">EOAS dept at FSU</a>. 
+                    I work at the 
+                    <a href="https://myweb.fsu.edu/emstewart/" target="_blank" class="text-amber-600 hover:underline">Stewart Lab</a> 
+                    where I work on metamorphic rocks to understand evolution of the solid earth and effects on climate and habitability.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-left flex flex-col items-center md:items-start">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 mb-8 overflow-hidden rounded-full border-4 border-amber-600 hover-lift">
+                        <img src="images/kanwa-profile.jpg" alt="Kanwa Sengupta" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"/>
+                    </div>
+                </div>
+                
+                <div class="fade-in-right">
+                    <div class="bg-white/95 backdrop-blur-sm shadow-lg rounded-lg p-6 hover-glow card-animate">
+                        <h3 class="text-2xl font-bold mb-4 text-amber-600">Kanwa Sengupta</h3>
+                        <p class="text-gray-600 mb-6">
+                            I am a passionate geologist and PhD student dedicated to understanding Earth's complex systems and processes. 
+                            My research focuses on metamorphic petrology, geochemistry, volatile cycling and tectonic evolution.
+                        </p>
+                        <p class="text-gray-600 mb-6">
+                            Through fieldwork, laboratory analysis, and computational modeling, I strive to unravel the stories written in rocks 
+                            and contribute to our understanding of Earth's dynamic history.
+                        </p>
+                        
+                        <div class="mt-6">
+                            <h4 class="text-lg font-semibold mb-4 text-amber-700">Education</h4>
+                            <div class="space-y-3">
+                                <div class="border-l-4 border-amber-600 pl-4 hover-lift">
+                                    <h5 class="font-semibold">PhD in Geology</h5>
+                                    <p class="text-sm text-gray-600">Florida State University • 2022-Present</p>
+                                </div>
+                                <div class="border-l-4 border-amber-600 pl-4 hover-lift">
+                                    <h5 class="font-semibold">M.Sc in Geology</h5>
+                                    <p class="text-sm text-gray-600">Indian Institute of Technology • 2020-2022 • CGPA: 9.72</p>
+                                </div>
+                                <div class="border-l-4 border-amber-600 pl-4 hover-lift">
+                                    <h5 class="font-semibold">B.Sc (Honors in Geological Sciences)</h5>
+                                    <p class="text-sm text-gray-600">Minor in Mathematics and Chemistry</p>
+                                    <p class="text-sm text-gray-600">Jadavpur University • 2017-2020 • CGPA: 8.88</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="geological-hero py-20 relative">
+        <div class="mountain-silhouette"></div>
+        <div class="stars"></div>
+        <div class="container px-4 md:px-6 relative z-10">
+            <div class="fade-in-up text-center mb-12 bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg hover-glow">
+                <h2 class="text-3xl font-bold mb-2">Research</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    My research focuses on understanding Earth's dynamic processes through metamorphic petrology, geochemistry and thermodynamic modelling.
+                </p>
+            </div>
+            
+            <!-- Research Projects -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-8 text-center text-white">Current Research Projects</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+                    <!-- Project 1 -->
+                    <div class="fade-in-up bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl text-amber-700 font-bold">Enhanced Precambrian Decarbonation</h4>
+                            <span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-sm pulse-glow">Ongoing</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2 flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Ontario, Canada
+                        </p>
+                        <p class="text-gray-600 mb-4">Investigating enhanced decarbonation during the Proterozoic, as a result of regional metamorphism during the Grenville Orogeny.</p>
+                        <div class="mb-4">
+                            <h5 class="font-semibold mb-2">Methods:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Field Mapping</span>
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Petrography</span>
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Geochemical Analysis</span>
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Thermodynamic Modeling</span>
+                            </div>
+                        </div>
+                        <p class="text-sm"><span class="font-semibold">Funding:</span> NSF grant awarded to Dr. Emily Stewart</p>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="fade-in-up bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow" style="animation-delay: 0.1s;">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl text-amber-700 font-bold">Role of carbon metasomatism in weakening the crust and slow slips</h4>
+                            <span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-sm pulse-glow">Ongoing</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2 flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Santa Catalina Island, California, USA
+                        </p>
+                        <p class="text-gray-600 mb-4">Investigating the role of carbon metasomatism at the paleosubduction interface in talc formation.</p>
+                        <div class="mb-4">
+                            <h5 class="font-semibold mb-2">Methods:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Field Mapping</span>
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Petrography</span>
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Geochemical Analysis</span>
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Thermodynamic Modeling</span>
+                            </div>
+                        </div>
+                        <p class="text-sm"><span class="font-semibold">Funding:</span> No funding</p>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="fade-in-up bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow" style="animation-delay: 0.2s;">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl text-amber-700 font-bold">Influence of Fluid Infiltration in a contact aureole</h4>
+                            <span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-sm pulse-glow">Ongoing</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2 flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Ontario, Canada
+                        </p>
+                        <p class="text-gray-600 mb-4">Investigating the role of fluid infiltration in metamorphic evolution of a contact aureole mineralogy, mass and heat transfer and carbon loss.</p>
+                        <div class="mb-4">
+                            <h5 class="font-semibold mb-2">Methods:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Field Mapping</span>
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Petrography</span>
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Geochemical Analysis</span>
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Thermodynamic Modeling</span>
+                            </div>
+                        </div>
+                        <p class="text-sm"><span class="font-semibold">Funding:</span> NSF grant to Dr. Emily Stewart</p>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="fade-in-up bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow" style="animation-delay: 0.3s;">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl text-amber-700 font-bold">Metamorphic evolution of K-feldspar-kyanite migmatite zone rocks</h4>
+                            <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm">Master's Thesis</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2 flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Arunachal Pradesh, India
+                        </p>
+                        <p class="text-gray-600 mb-4">Investigating the metamorphic evolution of highest grade of rocks in the lower Himalayan Sequence from the Lesser Himalayan Sequence of the Western Arunachal Himalayas.</p>
+                        <div class="mb-4">
+                            <h5 class="font-semibold mb-2">Methods:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Petrography</span>
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Geochemical Analyses</span>
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Thermobarometry</span>
+                                <span class="border border-gray-300 px-2 py-1 rounded text-xs hover-lift">Thermodynamic Modelling</span>
+                            </div>
+                        </div>
+                        <p class="text-sm"><span class="font-semibold">Funding:</span> No funding</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publications -->
+            <div class="fade-in-up">
+                <h3 class="text-2xl font-bold mb-8 text-center text-white">Recent Publications</h3>
+                <div class="max-w-5xl mx-auto space-y-6">
+                    <!-- Publication 1 -->
+                    <div class="fade-in-up bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow">
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex-1 pr-4">
+                                <h4 class="font-bold text-lg mb-2 leading-tight">Extreme Thermal Gradient and Carbon Loss in Contact Metamorphic Rocks: A Field-Based Study of the Tudor Gabbro Contact Aureole, Grenville Orogeny, Canada</h4>
+                                <p class="text-gray-600 mb-2 text-sm">SENGUPTA, Kanwa and STEWART, Emily</p>
+                                <p class="text-sm text-gray-600"><em>AGU Fall Meeting</em> (2024)</p>
+                            </div>
+                            <div class="flex flex-col gap-2 items-end">
+                                <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm pulse-glow">Published</span>
+                                <span class="border border-blue-600 text-blue-600 px-2 py-1 rounded text-sm">Conference Proceeding</span>
+                            </div>
+                        </div>
+                        <a href="https://agu.confex.com/agu/agu24/meetingapp.cgi/Session/237343" target="_blank" class="btn-animate inline-flex items-center gap-2 border border-amber-600 text-amber-600 hover:bg-amber-50 px-4 py-2 rounded text-sm transition-all duration-300 hover-lift">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            View Publication
+                        </a>
+                    </div>
+
+                    <!-- Publication 2 -->
+                    <div class="fade-in-up bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow" style="animation-delay: 0.1s;">
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex-1 pr-4">
+                                <h4 class="font-bold text-lg mb-2 leading-tight">A field-based estimate of Precambrian metamorphic CO2 degassing</h4>
+                                <p class="text-gray-600 mb-2 text-sm">STEWART, Emily, SAHA, Sayantan and SENGUPTA, Kanwa</p>
+                                <p class="text-sm text-gray-600"><em>Goldschmidt Conference</em> (2024)</p>
+                            </div>
+                            <div class="flex flex-col gap-2 items-end">
+                                <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm pulse-glow">Published</span>
+                                <span class="border border-blue-600 text-blue-600 px-2 py-1 rounded text-sm">Conference Proceeding</span>
+                            </div>
+                        </div>
+                        <a href="https://goldschmidtabstracts.info/2024/23728.pdf" target="_blank" class="btn-animate inline-flex items-center gap-2 border border-amber-600 text-amber-600 hover:bg-amber-50 px-4 py-2 rounded text-sm transition-all duration-300 hover-lift">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            View Publication
+                        </a>
+                    </div>
+
+                    <!-- Publication 3 -->
+                    <div class="fade-in-up bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow" style="animation-delay: 0.2s;">
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex-1 pr-4">
+                                <h4 class="font-bold text-lg mb-2 leading-tight">Constraints on Metamorphic Decarbonation in a Proterozoic Orogen: Observational and Thermodynamic Evidence from the Central Metasedimentary Belt, Grenville Province, Ontario, Canada</h4>
+                                <p class="text-gray-600 mb-2 text-sm">SENGUPTA, Kanwa and STEWART, Emily</p>
+                                <p class="text-sm text-gray-600"><em>AGU Fall Meeting</em> (2023)</p>
+                            </div>
+                            <div class="flex flex-col gap-2 items-end">
+                                <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm pulse-glow">Published</span>
+                                <span class="border border-blue-600 text-blue-600 px-2 py-1 rounded text-sm">Conference Proceeding</span>
+                            </div>
+                        </div>
+                        <a href="https://ui.adsabs.harvard.edu/abs/2023AGUFM.V31D01.2S/abstract" target="_blank" class="btn-animate inline-flex items-center gap-2 border border-amber-600 text-amber-600 hover:bg-amber-50 px-4 py-2 rounded text-sm transition-all duration-300 hover-lift">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            View Publication
+                        </a>
+                    </div>
+
+                    <!-- Publication 4 -->
+                    <div class="fade-in-up bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow" style="animation-delay: 0.3s;">
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex-1 pr-4">
+                                <h4 class="font-bold text-lg mb-2 leading-tight">CONTACT METAMORPHISM AND DECARBONATION DURING EMPLACEMENT OF THE CENTRAL ATLANTIC MAGMATIC PROVINCE, FLORIDA</h4>
+                                <p class="text-gray-600 mb-2 text-sm">ALLMAN, Lindsi, SENGUPTA, Kanwa, STEWART, Emily, MOOKHERJEE, Mainak and BASU, Abhisek</p>
+                                <p class="text-sm text-gray-600"><em>Geological Society of America Abstracts with Programs, Vol. 55, No. 2</em> (2023)</p>
+                            </div>
+                            <div class="flex flex-col gap-2 items-end">
+                                <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm pulse-glow">Published</span>
+                                <span class="border border-blue-600 text-blue-600 px-2 py-1 rounded text-sm">Conference Proceeding</span>
+                            </div>
+                        </div>
+                        <a href="https://gsa.confex.com/gsa/2023SE/webprogram/Paper385667.html" target="_blank" class="btn-animate inline-flex items-center gap-2 border border-amber-600 text-amber-600 hover:bg-amber-50 px-4 py-2 rounded text-sm transition-all duration-300 hover-lift">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            View Publication
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="geological-hero py-20 relative">
+        <div class="mountain-silhouette"></div>
+        <div class="stars"></div>
+        <div class="container px-4 md:px-6 relative z-10">
+            <div class="fade-in-up text-center mb-12 bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg hover-glow">
+                <h2 class="text-3xl font-bold mb-2">Blog</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Sharing insights about geology, research experiences, and the fascinating world of Earth sciences.
+                </p>
+            </div>
+            
+            <div class="fade-in-up bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg hover-glow">
+                <!-- Search Bar -->
+                <div class="max-w-md mx-auto mb-8">
+                    <div class="relative">
+                        <input type="text" id="blog-search" placeholder="Search blog posts..." class="w-full pl-10 pr-4 py-2 border border-amber-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 transition-all duration-300">
+                        <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div id="blog-posts" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
+                    <!-- Blog Post 1 -->
+                    <article class="blog-post bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow" data-title="southeastern gsa 2025 harrisonburg virginia" data-excerpt="southeastern gsa premier regional conference earth science students">
+                        <h3 class="text-lg font-bold text-amber-600 mb-2 hover:text-amber-700 transition-colors">Southeastern GSA 2025 at Harrisonburg, Virginia</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Southeastern GSA is a premier regional conference for earth science students in the Southeastern part of USA. This year it was held at Harrisonburg at the Hotel Madison at James Madison University...</p>
+                        <div class="flex items-center gap-1 text-xs text-gray-500 mb-3">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            March 20, 2025
+                        </div>
+                        <a href="blog/southeastern-gsa-2025.html" class="btn-animate text-amber-600 hover:text-amber-700 text-sm font-medium transition-colors inline-flex items-center gap-1">
+                            Read More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </article>
+                    
+                    <!-- Blog Post 2 -->
+                    <article class="blog-post bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow" data-title="agu 2024 conference washington dc" data-excerpt="stewart lab oral presentation poster presentation mass transfer carbon loss">
+                        <h3 class="text-lg font-bold text-amber-600 mb-2 hover:text-amber-700 transition-colors">2024 AGU Conference at Washington DC</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">We had a full house from Stewart Lab with Lindsi and Zhenhao having oral presentation and Sayantan and me having poster presentation. I had a nice time interacting with researchers...</p>
+                        <div class="flex items-center gap-1 text-xs text-gray-500 mb-3">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            February 21, 2025
+                        </div>
+                        <a href="blog/agu-2024.html" class="btn-animate text-amber-600 hover:text-amber-700 text-sm font-medium transition-colors inline-flex items-center gap-1">
+                            Read More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </article>
+                    
+                    <!-- Blog Post 3 -->
+                    <article class="blog-post bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow" data-title="summer national parks part ii olympic rainier smoky mountains" data-excerpt="glacier national park seattle olympic national park rainforest pacific coast smoky mountains">
+                        <h3 class="text-lg font-bold text-amber-600 mb-2 hover:text-amber-700 transition-colors">A Summer of National Parks Part II</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">From Glacier national park, we flew to Seattle to meet a few friends. We had only a day to explore and it was a tough choice between Rainier and Olympic national parks...</p>
+                        <div class="flex items-center gap-1 text-xs text-gray-500 mb-3">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            February 5, 2025
+                        </div>
+                        <a href="blog/summer-national-parks-2.html" class="btn-animate text-amber-600 hover:text-amber-700 text-sm font-medium transition-colors inline-flex items-center gap-1">
+                            Read More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </article>
+                    
+                    <!-- Blog Post 4 -->
+                    <article class="blog-post bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow" data-title="summer national parks part i grand canyon glacier arizona" data-excerpt="slot canyons north arizona grand canyon glacier national park olympic national park horseshoe bend">
+                        <h3 class="text-lg font-bold text-amber-600 mb-2 hover:text-amber-700 transition-colors">A Summer of National Parks Part I</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">I am horribly late at updating, but this summer I embarked on a number of trip. The first part involved a visit to the slot canyons of North Arizona, the Grand Canyon and then to Glacier National Park...</p>
+                        <div class="flex items-center gap-1 text-xs text-gray-500 mb-3">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            October 31, 2024
+                        </div>
+                        <a href="blog/summer-national-parks-1.html" class="btn-animate text-amber-600 hover:text-amber-700 text-sm font-medium transition-colors inline-flex items-center gap-1">
+                            Read More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </article>
+                    
+                    <!-- Blog Post 5 -->
+                    <article class="blog-post bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 hover:border-amber-600 transition-all duration-300 rounded-lg p-6 card-animate hover-glow" data-title="epma adventures university florida electron microprobe" data-excerpt="electron micro probe analyzer quantitative data nanoscale research facility grenville orogeny">
+                        <h3 class="text-lg font-bold text-amber-600 mb-2 hover:text-amber-700 transition-colors">EPMA Adventures at UF</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">EPMA or Electron Micro Probe Analyzer is used to obtain micro scale quantitative data. I went to Nanoscale Research facility (NRF) at University of Florida to get microscopic composition data...</p>
+                        <div class="flex items-center gap-1 text-xs text-gray-500 mb-3">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            July 3, 2024
+                        </div>
+                        <a href="blog/epma-adventures.html" class="btn-animate text-amber-600 hover:text-amber-700 text-sm font-medium transition-colors inline-flex items-center gap-1">
+                            Read More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </article>
+                </div>
+                
+                <div class="text-center">
+                    <a href="https://kanwasengupta.github.io/" target="_blank" class="btn-animate inline-flex items-center border border-amber-600 text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover-lift">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                        View Original Blog on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="geological-hero py-20 relative">
+        <div class="mountain-silhouette"></div>
+        <div class="stars"></div>
+        <div class="container px-4 md:px-6 relative z-10">
+            <div class="fade-in-up text-center mb-12 bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg hover-glow">
+                <h2 class="text-3xl font-bold mb-2">Get In Touch</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Have a question or want to work together? Feel free to contact me!
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Contact Info -->
+                <div class="fade-in-left">
+                    <div class="bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 rounded-lg p-6 h-full hover-glow card-animate">
+                        <h3 class="text-xl font-bold mb-4 text-amber-700">Contact Information</h3>
+                        <p class="text-gray-600 mb-6">
+                            Feel free to reach out to discuss research collaborations, academic opportunities, or any geology-related questions.
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center gap-3 hover-lift">
+                                <div class="bg-amber-100 p-2 rounded-full">
+                                    <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Email</p>
+                                    <a href="mailto:ksengupta@fsu.edu" class="text-amber-600 hover:underline transition-colors">ksengupta@fsu.edu</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="font-medium mb-3">Connect with me</p>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/kanwasengupta" target="_blank" class="bg-white hover:bg-amber-600 hover:text-white text-amber-600 rounded-full p-3 transition-all duration-300 border border-amber-200 hover-lift hover:scale-110">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                                
+                                <a href="https://www.linkedin.com/in/kanwa-sengupta-539795213/" target="_blank" class="bg-white hover:bg-amber-600 hover:text-white text-amber-600 rounded-full p-3 transition-all duration-300 border border-amber-200 hover-lift hover:scale-110">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg>
+                                </a>
+                                
+                                <a href="https://x.com/kuttusrailfan" target="_blank" class="bg-white hover:bg-amber-600 hover:text-white text-amber-600 rounded-full p-3 transition-all duration-300 border border-amber-200 hover-lift hover:scale-110">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="fade-in-right">
+                    <div class="bg-white/95 backdrop-blur-sm shadow-lg border border-amber-200 rounded-lg p-6 hover-glow card-animate">
+                        <h3 class="text-xl font-bold mb-4 text-sky-700">Send Me a Message</h3>
+                        <form id="contact-form" action="https://formspree.io/f/xyzjwrdv" method="POST" class="space-y-4">
+                            <div>
+                                <input type="text" name="name" placeholder="Your Name" required class="w-full px-3 py-2 border border-amber-200 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600 transition-all duration-300 hover:border-amber-400"/>
+                            </div>
+                            <div>
+                                <input type="email" name="email" placeholder="Your Email" required class="w-full px-3 py-2 border border-amber-200 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600 transition-all duration-300 hover:border-amber-400"/>
+                            </div>
+                            <div>
+                                <textarea name="message" placeholder="Your Message" rows="5" required class="w-full px-3 py-2 border border-amber-200 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600 transition-all duration-300 hover:border-amber-400 resize-none"></textarea>
+                            </div>
+                            <button type="submit" id="submit-btn" class="btn-animate w-full bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 btn-mobile rounded-lg font-medium transition-all duration-300 hover-lift flex items-center justify-center gap-2">
+                                <span id="submit-text">Send Message</span>
+                                <svg id="submit-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                </svg>
+                            </button>
+                        </form>
+                        <p class="text-xs text-gray-500 text-center mt-4">Messages are sent securely via Formspree</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-sky-100 bg-white">
+        <div class="container px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 text-sm fade-in-up">
+                    &copy; 2025 Kanwa Sengupta. All rights reserved.
+                </p>
+                <p class="text-gray-600 text-sm mt-2 md:mt-0 fade-in-up" style="animation-delay: 0.2s;">
+                    Built with passion for Earth sciences
+                </p>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="mt-4 md:mt-0 border border-amber-200 text-amber-600 hover:bg-amber-50 hover:text-amber-700 hover:border-amber-600 bg-transparent rounded-full p-2 transition-all duration-300 hover-lift float fade-in-up" style="animation-delay: 0.4s;">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize all animations and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Typed.js
+            new Typed('#typed-text', {
+                strings: ['Geologist', 'PhD Student', 'Researcher'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 1500,
+                loop: true
+            });
+
+            // Initialize Particles.js
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: ['#d97706', '#dc2626', '#7c3aed', '#059669'] },
+                    shape: { type: ['circle', 'triangle', 'polygon'], polygon: { nb_sides: 6 } },
+                    opacity: { value: 0.4, random: false },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: true, distance: 150, color: '#d97706', opacity: 0.2, width: 1 },
+                    move: { enable: true, speed: 0.8, direction: 'none', random: true, straight: false, out_mode: 'bounce' }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+                    modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+                },
+                retina_detect: true
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animation elements
+            document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Close mobile menu if open
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Active navigation highlighting
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            function updateActiveNav() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active', 'text-amber-600');
+                    link.classList.add('text-gray-600');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.remove('text-gray-600');
+                        link.classList.add('active', 'text-amber-600');
+                    }
+                });
+            }
+
+            // Navbar background on scroll
+            function updateNavbar() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md');
+                    navbar.classList.remove('bg-transparent');
+                } else {
+                    navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-md');
+                    navbar.classList.add('bg-transparent');
+                }
+            }
+
+            window.addEventListener('scroll', () => {
+                updateActiveNav();
+                updateNavbar();
+            });
+
+            // Blog search functionality
+            const searchInput = document.getElementById('blog-search');
+            const blogPosts = document.querySelectorAll('.blog-post');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                blogPosts.forEach(post => {
+                    const title = post.dataset.title.toLowerCase();
+                    const excerpt = post.dataset.excerpt.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                        post.style.display = 'block';
+                        post.classList.add('fade-in-up');
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+            });
+
+            // Contact form handling
+            const contactForm = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitText = document.getElementById('submit-text');
+            const submitIcon = document.getElementById('submit-icon');
+
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                submitText.textContent = 'Sending';
+                submitText.classList.add('loading-dots');
+                submitIcon.style.display = 'none';
+
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (response.ok) {
+                        // Success
+                        submitText.textContent = 'Message Sent!';
+                        submitText.classList.remove('loading-dots');
+                        submitBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+                        submitBtn.classList.remove('bg-amber-600', 'hover:bg-amber-700');
+                        contactForm.reset();
+                        
+                        // Reset after 3 seconds
+                        setTimeout(() => {
+                            submitBtn.disabled = false;
+                            submitText.textContent = 'Send Message';
+                            submitIcon.style.display = 'block';
+                            submitBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                            submitBtn.classList.add('bg-amber-600', 'hover:bg-amber-700');
+                        }, 3000);
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
+                } catch (error) {
+                    // Error
+                    submitText.textContent = 'Error - Try Again';
+                    submitText.classList.remove('loading-dots');
+                    submitBtn.classList.add('bg-red-600', 'hover:bg-red-700');
+                    submitBtn.classList.remove('bg-amber-600', 'hover:bg-amber-700');
+                    
+                    // Reset after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.disabled = false;
+                        submitText.textContent = 'Send Message';
+                        submitIcon.style.display = 'block';
+                        submitBtn.classList.remove('bg-red-600', 'hover:bg-red-700');
+                        submitBtn.classList.add('bg-amber-600', 'hover:bg-amber-700');
+                    }, 3000);
+                }
+            });
+
+            // Initialize animations on load
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight) {
+                        el.classList.add('animate');
+                    }
+                });
+            }, 100);
+        });
+
+        // Mobile-specific optimizations
+        const isMobile = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            // Disable particles on mobile for better performance
+            document.getElementById('particles-js').style.display = 'none';
+            
+            // Reduce animation complexity
+            document.querySelectorAll('.stars').forEach(el => {
+                el.style.animationDuration = '5s';
+            });
+            
+            // Add touch feedback
+            document.querySelectorAll('button, .btn-animate, .card-animate').forEach(el => {
+                el.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                el.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                });
+            });
+        }
+
+        // Enhanced mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            } else {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close mobile menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Touch-friendly scroll to top
+        const scrollToTopBtn = document.querySelector('button[onclick*="scrollTo"]');
+        if (scrollToTopBtn && isMobile) {
+            scrollToTopBtn.style.minHeight = '44px';
+            scrollToTopBtn.style.minWidth = '44px';
+        }
+
+        // Optimize contact form for mobile
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm && isMobile) {
+            // Add mobile-specific form enhancements
+            const inputs = contactForm.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    // Scroll input into view on mobile
+                    setTimeout(() => {
+                        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 300);
+                });
+            });
+        }
+
+        // Performance optimization for mobile
+        if (isMobile) {
+            // Lazy load heavy animations
+            const observerOptions = {
+                threshold: 0.3, // Higher threshold for mobile
+                rootMargin: '0px 0px -100px 0px' // Larger margin for mobile
+            };
+            
+            // Reduce intersection observer sensitivity on mobile
+            const mobileObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        // Unobserve after animation to improve performance
+                        mobileObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Re-observe elements with mobile-optimized settings
+            document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+                mobileObserver.observe(el);
+            });
+        }
+
+        // Add swipe gesture support for blog navigation
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const swipeDistance = touchEndX - touchStartX;
+            
+            if (Math.abs(swipeDistance) > swipeThreshold) {
+                // Add swipe feedback
+                if (swipeDistance > 0) {
+                    // Swipe right - could navigate to previous section
+                    console.log('Swipe right detected');
+                } else {
+                    // Swipe left - could navigate to next section
+                    console.log('Swipe left detected');
+                }
+            }
+        }
+
+        // Initialize Particles.js only on desktop
+        if (!isMobile) {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: isMobile ? 40 : 80, density: { enable: true, value_area: 800 } },
+                    color: { value: ['#d97706', '#dc2626', '#7c3aed', '#059669'] },
+                    shape: { type: ['circle', 'triangle', 'polygon'], polygon: { nb_sides: 6 } },
+                    opacity: { value: 0.4, random: false },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: !isMobile, distance: 150, color: '#d97706', opacity: 0.2, width: 1 },
+                    move: { enable: true, speed: isMobile ? 0.5 : 0.8, direction: 'none', random: true, straight: false, out_mode: 'bounce' }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: { 
+                        onhover: { enable: !isMobile, mode: 'repulse' }, 
+                        onclick: { enable: true, mode: 'push' },
+                        resize: true
+                    },
+                    modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 2 } }
+                },
+                retina_detect: true
+            });
+        }
+    </script>
+</body>
+</html>
