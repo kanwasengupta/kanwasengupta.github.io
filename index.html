@@ -3,713 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanwa Sen Gupta - Geologist & Developer</title>
-    <meta name="description" content="Kanwa Sen Gupta - Geologist, Developer, and Researcher specializing in igneous petrology and web development">
-    <meta name="keywords" content="geology, petrology, web development, research, Kanwa Sen Gupta">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    <!-- External Libraries -->
+    <title>A Summer of National Parks Part II - Kanwa Sengupta</title>
+    <meta name="description" content="Exploring Olympic National Park, Mount Rainier, and the Great Smoky Mountains">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <!-- Custom Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom CSS Variables */
-        :root {
-            --primary: #0f172a;
-            --secondary: #1e293b;
-            --accent: #3b82f6;
-            --text: #f8fafc;
-            --muted: #64748b;
-        }
-
-        /* Dark theme by default */
-        body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: var(--text);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        /* Particles container */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        /* Geological background animation */
-        .geological-bg {
-            background: linear-gradient(45deg, 
-                rgba(59, 130, 246, 0.1) 0%, 
-                rgba(16, 185, 129, 0.1) 25%, 
-                rgba(245, 158, 11, 0.1) 50%, 
-                rgba(239, 68, 68, 0.1) 75%, 
-                rgba(139, 92, 246, 0.1) 100%);
-            background-size: 400% 400%;
-            animation: geologicalShift 20s ease-in-out infinite;
-        }
-
-        @keyframes geologicalShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--secondary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 4px;
-        }
-
-        /* Mobile optimizations */
-        @media (max-width: 768px) {
-            #particles-js {
-                display: none; /* Disable particles on mobile for performance */
-            }
-            
-            .text-6xl {
-                font-size: 2.5rem;
-            }
-            
-            .text-4xl {
-                font-size: 2rem;
-            }
-            
-            .text-2xl {
-                font-size: 1.5rem;
-            }
-            
-            /* Touch-friendly buttons */
-            button, .btn {
-                min-height: 44px;
-                min-width: 44px;
-            }
-            
-            /* Mobile form inputs */
-            input, textarea {
-                font-size: 16px; /* Prevent zoom on iOS */
-            }
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .hover-scale {
-            transition: transform 0.3s ease;
-        }
-
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-
-        /* Mobile navigation */
-        .mobile-menu {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        .mobile-menu.open {
-            transform: translateX(0);
-        }
-
-        /* Reduce motion for accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="geological-bg">
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
-
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-white min-h-screen">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <h1 class="text-xl font-bold text-white">Kanwa Sen Gupta</h1>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#home" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-                        <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
-                        <a href="#research" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Research</a>
-                        <a href="#projects" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
-                        <a href="#blog" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
-                        <a href="#contact" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
-                    </div>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white p-2">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-y-0 left-0 w-64 bg-slate-900 z-50">
-            <div class="flex items-center justify-between p-4 border-b border-slate-700">
-                <h2 class="text-lg font-semibold text-white">Menu</h2>
-                <button id="mobile-menu-close" class="text-gray-300 hover:text-white">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:text-white rounded-md text-base font-medium">Home</a>
-                <a href="#about" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:text-white rounded-md text-base font-medium">About</a>
-                <a href="#research" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:text-white rounded-md text-base font-medium">Research</a>
-                <a href="#projects" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:text-white rounded-md text-base font-medium">Projects</a>
-                <a href="#blog" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:text-white rounded-md text-base font-medium">Blog</a>
-                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:text-white rounded-md text-base font-medium">Contact</a>
+    <nav class="fixed top-0 w-full bg-slate-900/90 backdrop-blur-md z-50 border-b border-slate-700">
+        <div class="max-w-4xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../index.html" class="text-xl font-bold text-amber-400 hover:text-amber-300 transition-colors">
+                    ← Back to Portfolio
+                </a>
+                <div class="text-sm text-gray-400">February 5, 2025</div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center px-4">
-        <div class="text-center max-w-4xl mx-auto fade-in">
-            <div class="mb-8">
-                <img src="public/images/kanwa-profile.jpg" alt="Kanwa Sen Gupta" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-500 shadow-lg hover-scale">
+    <!-- Article Content -->
+    <article class="max-w-4xl mx-auto px-4 pt-24 pb-16">
+        <!-- Header -->
+        <header class="mb-12 fade-in">
+            <div class="mb-6">
+                <span class="bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-600/30">Travel</span>
             </div>
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                Hi, I'm <span class="text-blue-400">Kanwa Sen Gupta</span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                A Summer of National Parks Part II
             </h1>
-            <div class="text-xl md:text-2xl text-gray-300 mb-8">
-                <span id="typed-text"></span>
+            <div class="flex items-center gap-4 text-gray-400">
+                <span>February 5, 2025</span>
+                <span>•</span>
+                <span>8 min read</span>
             </div>
-            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-                Geologist and developer passionate about understanding Earth's processes and creating innovative solutions through technology.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors hover-scale">
-                    Get In Touch
-                </a>
-                <a href="#research" class="border border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors hover-scale">
-                    View Research
-                </a>
-            </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                    Bridging the gap between Earth sciences and technology
+        <!-- Featured Image -->
+        <div class="mb-12 fade-in">
+            <img src="../images/blog/olympic-mountains.jpg" alt="Olympic Mountains" class="w-full h-64 md:h-96 object-cover rounded-lg shadow-2xl">
+            <p class="text-sm text-gray-400 mt-2 text-center">The stunning Olympic Mountains in Washington State</p>
+        </div>
+
+        <!-- Content -->
+        <div class="prose prose-invert prose-lg max-w-none">
+            <div class="fade-in">
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                    From Glacier National Park, we flew to Seattle to meet a few friends. We had only a day to explore and it was a tough choice 
+                    between Rainier and Olympic National Parks. We ultimately chose Olympic for its diverse ecosystems and geological features.
                 </p>
             </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <h3 class="text-2xl font-bold mb-6 text-blue-400">My Journey</h3>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        I'm a passionate geologist and developer currently pursuing my Master's in Geology at Utah State University. 
-                        My research focuses on igneous petrology, specifically studying mafic enclaves and their role in understanding 
-                        magmatic processes.
-                    </p>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        Beyond geology, I'm deeply interested in technology and its applications in Earth sciences. I enjoy creating 
-                        web applications and tools that can help researchers and the general public better understand our planet.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm">Igneous Petrology</span>
-                        <span class="bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm">Web Development</span>
-                        <span class="bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm">Research</span>
-                        <span class="bg-orange-600/20 text-orange-400 px-3 py-1 rounded-full text-sm">Field Work</span>
-                    </div>
+
+            <div class="fade-in">
+                <h2 class="text-2xl font-bold mb-4 text-amber-400">Olympic National Park</h2>
+                <p class="mb-6 leading-relaxed">
+                    Olympic National Park is a geological wonderland that showcases the complex tectonic history of the Pacific Northwest. 
+                    The park sits on the Olympic Peninsula, which is composed of accreted oceanic terranes that were scraped off the oceanic plate 
+                    and added to the North American continent over millions of years.
+                </p>
+                
+                <div class="my-8">
+                    <img src="../images/blog/olympic-rainforest.jpg" alt="Olympic Rainforest" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="text-sm text-gray-400 mt-2 text-center">The lush temperate rainforest of Olympic National Park</p>
                 </div>
                 
-                <div class="fade-in">
-                    <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
-                        <h4 class="text-xl font-bold mb-4 text-blue-400">Quick Facts</h4>
-                        <ul class="space-y-3 text-gray-300">
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                                MS Geology Student at Utah State University
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                                Research focus on mafic enclaves
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                                Full-stack web developer
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
-                                Field work enthusiast
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research Section -->
-    <section id="research" class="py-20 px-4 bg-slate-800/30">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Research</h2>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                    Exploring Earth's igneous processes through petrology and geochemistry
+                <p class="mb-6 leading-relaxed">
+                    What struck me most was the incredible diversity of rock types and ages within a relatively small area. From Paleozoic to Mesozoic 
+                    marine sedimentary rocks to Miocene basalts, the park tells a story of oceanic crust formation, subduction, and accretion.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 fade-in hover-scale">
-                    <h3 class="text-xl font-bold mb-4 text-blue-400">Current Research</h3>
-                    <h4 class="text-lg font-semibold mb-3">Mafic Enclaves in Igneous Systems</h4>
-                    <p class="text-gray-300 mb-4">
-                        Investigating the petrogenesis and significance of mafic enclaves in intermediate to felsic 
-                        igneous rocks, focusing on their role in understanding magma mixing and crustal processes.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-600/20 text-blue-400 px-2 py-1 rounded text-sm">Petrology</span>
-                        <span class="bg-green-600/20 text-green-400 px-2 py-1 rounded text-sm">Geochemistry</span>
-                        <span class="bg-purple-600/20 text-purple-400 px-2 py-1 rounded text-sm">EPMA</span>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 fade-in hover-scale">
-                    <h3 class="text-xl font-bold mb-4 text-green-400">Field Work</h3>
-                    <h4 class="text-lg font-semibold mb-3">Utah Geological Surveys</h4>
-                    <p class="text-gray-300 mb-4">
-                        Extensive field work across Utah's diverse geological terrains, collecting samples and 
-                        documenting igneous intrusions for detailed laboratory analysis.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-orange-600/20 text-orange-400 px-2 py-1 rounded text-sm">Field Mapping</span>
-                        <span class="bg-red-600/20 text-red-400 px-2 py-1 rounded text-sm">Sample Collection</span>
-                        <span class="bg-yellow-600/20 text-yellow-400 px-2 py-1 rounded text-sm">Documentation</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 fade-in">
-                <h3 class="text-xl font-bold mb-4 text-purple-400">Publications & Presentations</h3>
-                <div class="space-y-4">
-                    <div class="border-l-4 border-blue-500 pl-4">
-                        <h4 class="font-semibold">AGU Fall Meeting 2024</h4>
-                        <p class="text-gray-300 text-sm">Poster presentation on mafic enclave petrogenesis</p>
-                    </div>
-                    <div class="border-l-4 border-green-500 pl-4">
-                        <h4 class="font-semibold">Southeastern GSA 2025</h4>
-                        <p class="text-gray-300 text-sm">Upcoming presentation on igneous petrology research</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                    A collection of web applications and tools I've developed
+            <div class="fade-in">
+                <h2 class="text-2xl font-bold mb-4 text-amber-400">The Temperate Rainforest</h2>
+                <p class="mb-6 leading-relaxed">
+                    The Hoh Rainforest was absolutely magical. The combination of high precipitation, mild temperatures, and the underlying geology 
+                    creates perfect conditions for this unique ecosystem. The thick soil development over the weathered marine sedimentary rocks 
+                    provides excellent drainage and nutrient availability for the massive Sitka spruces and western hemlocks.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 fade-in hover-scale">
-                    <img src="public/images/health-assistant.png" alt="Health Assistant" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <h3 class="text-xl font-bold mb-3">Health Assistant</h3>
-                    <p class="text-gray-300 mb-4">AI-powered health monitoring and assistance application</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-600/20 text-blue-400 px-2 py-1 rounded text-sm">React</span>
-                        <span class="bg-green-600/20 text-green-400 px-2 py-1 rounded text-sm">AI/ML</span>
-                    </div>
-                    <a href="#" class="text-blue-400 hover:text-blue-300 font-medium">View Project →</a>
+            <div class="fade-in">
+                <h2 class="text-2xl font-bold mb-4 text-amber-400">Coastal Geology</h2>
+                <div class="my-8">
+                    <img src="../images/blog/pacific-coast.jpg" alt="Pacific Coast" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="text-sm text-gray-400 mt-2 text-center">Dramatic sea stacks along the Olympic Peninsula coast</p>
                 </div>
-
-                <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 fade-in hover-scale">
-                    <img src="public/images/screentime-plus.png" alt="ScreenTime Plus" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <h3 class="text-xl font-bold mb-3">ScreenTime Plus</h3>
-                    <p class="text-gray-300 mb-4">Advanced screen time tracking and productivity app</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-purple-600/20 text-purple-400 px-2 py-1 rounded text-sm">Swift</span>
-                        <span class="bg-orange-600/20 text-orange-400 px-2 py-1 rounded text-sm">iOS</span>
-                    </div>
-                    <a href="#" class="text-blue-400 hover:text-blue-300 font-medium">View Project →</a>
-                </div>
-
-                <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 fade-in hover-scale">
-                    <img src="public/images/swachh-app.png" alt="Swachh App" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <h3 class="text-xl font-bold mb-3">Swachh App</h3>
-                    <p class="text-gray-300 mb-4">Environmental awareness and cleanliness tracking application</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-green-600/20 text-green-400 px-2 py-1 rounded text-sm">React Native</span>
-                        <span class="bg-blue-600/20 text-blue-400 px-2 py-1 rounded text-sm">Environmental</span>
-                    </div>
-                    <a href="#" class="text-blue-400 hover:text-blue-300 font-medium">View Project →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="py-20 px-4 bg-slate-800/30">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Blog</h2>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                    Sharing insights from research, field work, and development
+                
+                <p class="mb-6 leading-relaxed">
+                    The coastal section of the park showcases spectacular examples of marine erosion and deposition. The sea stacks and arches 
+                    are carved from resistant Miocene basalts and marine sedimentary rocks. The wave-cut platforms expose beautiful cross-sections 
+                    of the geological formations, providing excellent opportunities to study the structural relationships between different rock units.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 fade-in hover-scale">
-                    <img src="public/images/blog/gsa-conference.jpg" alt="GSA Conference" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="bg-blue-600/20 text-blue-400 px-2 py-1 rounded text-sm">Conference</span>
-                        <span class="text-gray-400 text-sm">March 2025</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Southeastern GSA 2025</h3>
-                    <p class="text-gray-300 mb-4">Preparing for my upcoming presentation at the Southeastern GSA meeting...</p>
-                    <a href="blog/southeastern-gsa-2025.html" class="text-blue-400 hover:text-blue-300 font-medium">Read More →</a>
-                </article>
-
-                <article class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 fade-in hover-scale">
-                    <img src="public/images/blog/agu-poster.jpg" alt="AGU Poster" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="bg-green-600/20 text-green-400 px-2 py-1 rounded text-sm">Research</span>
-                        <span class="text-gray-400 text-sm">December 2024</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">AGU 2024 Experience</h3>
-                    <p class="text-gray-300 mb-4">Reflecting on my poster presentation at AGU Fall Meeting 2024...</p>
-                    <a href="blog/agu-2024.html" class="text-blue-400 hover:text-blue-300 font-medium">Read More →</a>
-                </article>
-
-                <article class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 fade-in hover-scale">
-                    <img src="public/images/blog/stewart-lab.jpg" alt="EPMA Lab" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="bg-purple-600/20 text-purple-400 px-2 py-1 rounded text-sm">Lab Work</span>
-                        <span class="text-gray-400 text-sm">November 2024</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">EPMA Adventures</h3>
-                    <p class="text-gray-300 mb-4">My experience working with the electron microprobe analyzer...</p>
-                    <a href="blog/epma-adventures.html" class="text-blue-400 hover:text-blue-300 font-medium">Read More →</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                    Let's connect and discuss geology, research, or development projects
+            <div class="fade-in">
+                <h2 class="text-2xl font-bold mb-4 text-amber-400">Great Smoky Mountains</h2>
+                <div class="my-8">
+                    <img src="../images/blog/smoky-mountains.jpg" alt="Smoky Mountains" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="text-sm text-gray-400 mt-2 text-center">The ancient Appalachian Mountains shrouded in mist</p>
+                </div>
+                
+                <p class="mb-6 leading-relaxed">
+                    Our final stop was the Great Smoky Mountains, which provided a fascinating contrast to the young, tectonically active geology 
+                    of the western parks. Here, we're looking at some of the oldest rocks in North America - Precambrian basement rocks that 
+                    have been through multiple orogenic events.
+                </p>
+                
+                <p class="mb-6 leading-relaxed">
+                    The Smokies are part of the Appalachian Mountain system, formed during the assembly of the supercontinent Pangaea. 
+                    The complex thrust faulting and folding visible throughout the park tells the story of continental collision and the 
+                    closure of the ancient Iapetus Ocean.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="fade-in">
-                    <h3 class="text-2xl font-bold mb-6 text-blue-400">Contact Information</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="font-medium">Email</p>
-                                <p class="text-gray-400">kanwa.sengupta@aggiemail.usu.edu</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="font-medium">GitHub</p>
-                                <p class="text-gray-400">github.com/kanwasengupta</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="font-medium">LinkedIn</p>
-                                <p class="text-gray-400">linkedin.com/in/kanwasengupta</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="fade-in">
+                <h2 class="text-2xl font-bold mb-4 text-amber-400">Geological Observations</h2>
+                <ul class="list-disc list-inside mb-6 space-y-2">
+                    <li>Excellent exposures of Precambrian gneisses and schists in the Smoky Mountains</li>
+                    <li>Beautiful examples of Paleozoic thrust faulting and structural geology</li>
+                    <li>Diverse metamorphic mineral assemblages indicating varying P-T conditions</li>
+                    <li>Evidence of multiple deformation events in the Appalachian orogeny</li>
+                    <li>Contrast between ancient, stable continental crust and active margin tectonics</li>
+                </ul>
+            </div>
 
-                <div class="fade-in">
-                    <form class="space-y-6" id="contact-form">
-                        <div>
-                            <label for="name" class="block text-sm font-medium mb-2">Name</label>
-                            <input type="text" id="name" name="name" required 
-                                   class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-sm font-medium mb-2">Email</label>
-                            <input type="email" id="email" name="email" required 
-                                   class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
-                            <textarea id="message" name="message" rows="5" required 
-                                      class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white resize-none"></textarea>
-                        </div>
-                        
-                        <button type="submit" 
-                                class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors hover-scale">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
+            <div class="fade-in">
+                <h2 class="text-2xl font-bold mb-4 text-amber-400">Research Connections</h2>
+                <p class="mb-6 leading-relaxed">
+                    This trip provided excellent field experience that directly relates to my research on metamorphic processes. 
+                    Seeing the regional metamorphic rocks of the Appalachians helped me better understand the large-scale processes 
+                    that I study in the laboratory. The contrast between contact and regional metamorphism was particularly enlightening.
+                </p>
+                
+                <p class="mb-6 leading-relaxed">
+                    The diverse geological settings also highlighted the importance of tectonic context in understanding metamorphic processes. 
+                    From the accretionary complex of Olympic to the continental collision zone of the Appalachians, each setting produces 
+                    distinct metamorphic signatures that tell unique stories about Earth's dynamic history.
+                </p>
+            </div>
+
+            <div class="fade-in">
+                <h2 class="text-2xl font-bold mb-4 text-amber-400">Final Thoughts</h2>
+                <p class="mb-6 leading-relaxed">
+                    This summer of national parks was not just a vacation, but an incredible field geology experience that has enriched 
+                    my understanding of North American geology. From the young, active margins of the west to the ancient, stable craton 
+                    of the east, each park offered unique insights into the processes that have shaped our continent.
+                </p>
+                
+                <p class="mb-6 leading-relaxed">
+                    As a geologist, there's nothing quite like seeing these processes written in stone across such spectacular landscapes. 
+                    These experiences continue to inspire my research and remind me why I fell in love with geology in the first place.
+                </p>
             </div>
         </div>
-    </section>
+
+        <!-- Tags -->
+        <div class="mt-12 fade-in">
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-600/30">Travel</span>
+                <span class="bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-600/30">Field Work</span>
+                <span class="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-600/30">Geology</span>
+                <span class="bg-orange-600/20 text-orange-400 px-3 py-1 rounded-full text-sm border border-orange-600/30">National Parks</span>
+                <span class="bg-red-600/20 text-red-400 px-3 py-1 rounded-full text-sm border border-red-600/30">Metamorphism</span>
+            </div>
+        </div>
+    </article>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 py-8 px-4 border-t border-slate-700">
-        <div class="max-w-6xl mx-auto text-center">
-            <p class="text-gray-400 mb-4">
-                © 2024 Kanwa Sen Gupta. All rights reserved.
-            </p>
-            <div class="flex justify-center space-x-6">
-                <a href="mailto:kanwa.sengupta@aggiemail.usu.edu" class="text-gray-400 hover:text-white transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                </a>
-                <a href="https://github.com/kanwasengupta" class="text-gray-400 hover:text-white transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="https://linkedin.com/in/kanwasengupta" class="text-gray-400 hover:text-white transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                </a>
-            </div>
+    <footer class="border-t border-slate-700 bg-slate-900 py-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2025 Kanwa Sengupta. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Initialize particles.js (only on desktop)
-        if (window.innerWidth > 768) {
-            particlesJS('particles-js', {
-                particles: {
-                    number: { value: 80, density: { enable: true, value_area: 800 } },
-                    color: { value: '#3b82f6' },
-                    shape: { type: 'circle' },
-                    opacity: { value: 0.5, random: false },
-                    size: { value: 3, random: true },
-                    line_linked: {
-                        enable: true,
-                        distance: 150,
-                        color: '#3b82f6',
-                        opacity: 0.4,
-                        width: 1
-                    },
-                    move: {
-                        enable: true,
-                        speed: 2,
-                        direction: 'none',
-                        random: false,
-                        straight: false,
-                        out_mode: 'out',
-                        bounce: false
-                    }
-                },
-                interactivity: {
-                    detect_on: 'canvas',
-                    events: {
-                        onhover: { enable: true, mode: 'repulse' },
-                        onclick: { enable: true, mode: 'push' },
-                        resize: true
-                    }
-                },
-                retina_detect: true
-            });
-        }
-
-        // Initialize Typed.js
-        new Typed('#typed-text', {
-            strings: [
-                'Geologist & Researcher',
-                'Web Developer',
-                'Igneous Petrology Specialist',
-                'Field Work Enthusiast'
-            ],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 2000,
-            loop: true
-        });
-
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-        function openMobileMenu() {
-            mobileMenu.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-
-        mobileMenuBtn.addEventListener('click', openMobileMenu);
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-
-        // Close mobile menu when clicking on nav links
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-
-        // Close mobile menu when clicking outside
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) {
-                closeMobileMenu();
-            }
-        });
-
-        // Close mobile menu on window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) {
-                closeMobileMenu();
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Intersection Observer for animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Stop observing once animated
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        // Observe all fade-in elements
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
-
-        // Contact form handling
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            // Create mailto link
-            const subject = encodeURIComponent(`Contact from ${name}`);
-            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-            const mailtoLink = `mailto:kanwa.sengupta@aggiemail.usu.edu?subject=${subject}&body=${body}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Reset form
-            this.reset();
-            
-            // Show success message
-            alert('Thank you for your message! Your email client should open now.');
-        });
-
-        // Add touch feedback for mobile
-        if ('ontouchstart' in window) {
-            document.querySelectorAll('.hover-scale').forEach(element => {
-                element.addEventListener('touchstart', function() {
-                    this.style.transform = 'scale(0.95)';
-                });
-                
-                element.addEventListener('touchend', function() {
-                    this.style.transform = '';
-                });
-            });
-        }
     </script>
 </body>
 </html>
