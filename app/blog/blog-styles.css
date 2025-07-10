@@ -1,0 +1,76 @@
+/* Global blog post styles */
+.prose {
+  color: inherit;
+  max-width: none;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: inherit;
+  font-weight: 700;
+}
+
+.prose h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.prose img {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.prose a {
+  color: #d97706;
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive image grids */
+.prose .grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.prose .grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .prose .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Info boxes */
+.prose .bg-amber-50 {
+  background-color: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.prose .bg-amber-50 h3 {
+  color: #b45309;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.prose .bg-amber-50 p {
+  margin-bottom: 0;
+  font-size: 0.875rem;
+}
