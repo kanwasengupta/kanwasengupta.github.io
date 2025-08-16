@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title> Summer 2025 Part 1: Monument valley  | Kanwa Sengupta</title>
+    <meta name="description" content="May trip to Utah and Colorado with friends"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .geological-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #374151 50%, #4b5563 75%, #6b7280 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .mountain-silhouette {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 50%, transparent 100%);
+            clip-path: polygon(0% 100%, 0% 60%, 10% 50%, 20% 65%, 30% 45%, 40% 55%, 50% 35%, 60% 50%, 70% 40%, 80% 60%, 90% 45%, 100% 55%, 100% 100%);
+            animation: mountainFloat 15s ease-in-out infinite;
+        }
+        @keyframes mountainFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(2px 2px at 20px 30px, #fff, transparent), radial-gradient(2px 2px at 40px 70px, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: sparkle 3s linear infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    <div class="geological-hero min-h-screen relative">
+        <div class="mountain-silhouette"></div>
+        <div class="stars"></div>
+        
+        <div class="container mx-auto px-4 md:px-6 py-20 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-8 fade-in-up">
+                    <a href="../index.html#blog" class="inline-flex items-center gap-2 border border-amber-600 text-amber-600 hover:bg-amber-50 bg-white/90 px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                        Back to Blog
+                    </a>
+                </div>
+                
+                <article class="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg border-amber-200 p-8 fade-in-up" style="animation-delay: 0.2s;">
+                    <header class="mb-8">
+                        <h1 class="text-4xl font-bold mb-4 text-amber-700">2024 AGU Conference at Washington DC</h1>
+                        <div class="flex items-center gap-2 text-gray-600">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <time datetime="2025-02-21">February 21, 2025</time>
+                        </div>
+                    </header>
+                    
+                    <div class="prose prose-lg max-w-none">
+                        <h2 class="text-2xl font-bold text-amber-600 mb-4">AGU 2024</h2>
+                        
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            This was my first trip of the summer to the deserts of Utah and mountains of Colorado.
+                            Our first day started with a long drive from Pheonix, AZ to Monument valley. Monument valley consists of brilliant 
+examples of eolian geomorphology with magnificent mesaas and buttes
+                        </p>
+
+                        <!--  Photo -->
+                        <div class="my-6">
+                            <img src="/public/images/PXL_20250529_010308886.MP.jpg" alt="Monument Valley" 
+                                 class="rounded-xl shadow-lg mx-auto max-h-96 object-contain"/>
+                            <p class="text-sm text-gray-500 text-center mt-2">Presenting my poster at AGU 2024</p>
+                        </div>
+                        
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            I was mesmerized by the natural wonders and realized why people have revered this since time unknown.
+MOnumwnt valley also offers brilliant night sky views and even though there were clouds, at the end the brilliant night sky with the landforms was worth the wait.
+                        </p>
+
+                        <!-- Group lunch and food photos -->
+                        <div class="my-6 grid md:grid-cols-2 gap-6">
+                            <div>
+                                <img src="/public/images/PXL_20250529_011948264.MP.jpg" alt="with the beautiful mesas of the monument valley"
+                                     class="rounded-xl shadow-md w-full h-72 object-cover"/>
+                                <p class="text-sm text-gray-500 text-center mt-2">Stewart Lab group lunch</p>
+                            </div>
+                            <div>
+                                <img src="/public/images/PXL_20250529_055126398.NIGHT~2.jpg" alt="Night sky from our campsite"
+                                     class="rounded-xl shadow-md w-full h-72 object-cover"/>
+                                <p class="text-sm text-gray-500 text-center mt-2">Fry bread and Bison chili</p>
+                            </div>
+                        </div>
+                    </div>
+<!-- Navigation -->
+                    <div class="flex justify-between items-center mt-12 pt-8 border-t border-amber-200">
+                        <div class="flex-1">
+                            <a href="southeastern-gsa-2025.html" class="inline-flex items-center gap-2 border border-amber-600 text-amber-600 hover:bg-amber-50 px-4 py-2 rounded transition-all duration-300">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                                <div class="text-left">
+                                    <div class="text-xs text-gray-500">Previous</div>
+                                    <div class="font-medium">2024 AGU Conference</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+</body>
+</html>
