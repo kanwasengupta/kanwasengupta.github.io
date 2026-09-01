@@ -60,7 +60,7 @@ export const home = {
     news: [
     {
       date: "August 2026",
-      text: "Received Harold T. Stearns Research Award from the Geological Society of America for work on subduction zone carbon cycling in Catalina Islands.",
+      text: "Received Harold T. Stearns Research Award from the Geological Society of America for work on subduction zone carbon cycling and rheology in Catalina Islands.",
     },
   ],
   bio: [
