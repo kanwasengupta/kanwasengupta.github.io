@@ -57,6 +57,12 @@ export const person = {
 /* ------------------------------------------------------------------ */
 
 export const home = {
+    news: [
+    {
+      date: "August 2026",
+      text: "Received Harold T. Stearns Research Award from the Geological Society of America for work on subduction zone carbon cycling in Catalina Islands.",
+    },
+  ],
   bio: [
     "My research focuses on reconstructing metamorphic pressure–temperature (P–T) evolution to understand the tectonic history of Earth's crust. I investigate fluid–rock interactions and their role in driving metamorphic reactions, mass transfer, and mineral transformation.",
     "I use classical petrologic techniques to address societally relevant geoscience problems, linking fundamental metamorphic processes to carbon release and sequestration, crustal rheology, and earthquake hazards. By bridging basic and applied research, I aim to improve our understanding of Earth's dynamic systems and their implications for natural hazards and the global carbon cycle.",
