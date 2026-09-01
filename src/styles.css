@@ -86,3 +86,35 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 }
+/* News / announcement pop-in */
+@keyframes news-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(8px);
+  }
+  60% {
+    transform: scale(1.03) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes news-badge-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.news-banner {
+  animation: news-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.news-badge {
+  animation: news-badge-pulse 1.8s ease-in-out infinite;
+}
