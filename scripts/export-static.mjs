@@ -6,8 +6,10 @@
  * plain static folder that GitHub Pages can serve.
  *
  * Usage: bun run export  (after `bun run build`)
- */
+ 
 import { spawn } from "node:child_process";
+*/
+import { fileURLToPath } from "node:url";
 import { cp, mkdir, writeFile, rm } from "node:fs/promises";
 import path from "node:path";
 
