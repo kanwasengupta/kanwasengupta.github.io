@@ -1,5 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { home, images, person } from "../content/site";
+import { useEffect, useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { home, images, person } from "../content/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -91,6 +94,8 @@ function Home() {
         </div>
       </section>
 
+       <NewsSection />
+
       <section className="py-16">
         <h2 className="rule-heading text-2xl">Research interests</h2>
         <ul className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -103,5 +108,44 @@ function Home() {
         </ul>
       </section>
     </div>
+  );
+}
+function NewsSection() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 150);
+    return () => clearTimeout(t);
+  }, []);
+
+  if (!home.news?.length) return null;
+
+  return (
+    <section className="py-8">
+      <div
+        className={`news-banner overflow-hidden rounded-lg border-l-4 border-primary bg-secondary/60 px-6 py-5 shadow-sm transition-opacity ${
+          visible ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="flex items-center gap-3">
+          <span className="news-badge inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary-foreground">
+            ★ News
+          </span>
+          <h2 className="text-lg">News &amp; Updates</h2>
+        </div>
+        <ul className="mt-4 space-y-3">
+          {home.news.map((n, i) => (
+            <li key={i} className="flex flex-col gap-1 sm:flex-row sm:gap-4">
+              <span className="shrink-0 text-xs font-medium uppercase tracking-wide text-primary">
+                {n.date}
+              </span>
+              <span className="text-sm leading-relaxed text-secondary-foreground">
+                {n.text}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }
